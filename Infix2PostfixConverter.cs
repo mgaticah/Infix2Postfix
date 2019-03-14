@@ -7,6 +7,7 @@ public class Infix2PostfixConverter
     public Infix2PostfixConverter()
     {
         CreateOperators();
+        postFix = "";
     }
     public string Convert(string expression)
     {
@@ -28,9 +29,7 @@ public class Infix2PostfixConverter
                 operatorsStack.Insert(mathOperator);
             }
             else
-            {
                 operand += letter.ToString();
-            }
         }
         if (!string.IsNullOrEmpty(operand))
             postFix += operand + " ";
